@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}My Company {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to {% block pageName %} {% endblock pageName %}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block main %}
+
+    {% endblock main %}
+    
+    <footer>
+        <p>&copy; 2024 My Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
