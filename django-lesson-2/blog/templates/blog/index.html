@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Archive</title>
+    <link rel="stylesheet" href="{% static 'blog/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Blog Archive</h1>
+    </header>
+
+    <main>
+        <section id="blog-archive">
+            
+            <article class="blog-post">
+                {% for post in list_of_posts %}
+            
+                <h2><a href="{% url 'blog_post' post.id %}">{{post.title}}</a></h2>
+                <p class="author">Posted by {{post.author|upper}} on {{post.created_at}}</p>
+                <p>
+                    {% if post.content|length > 50 %}
+                        {{post.content|slice:":50"}}...
+                    {% else %}
+                        {{post.content}}
+                    {% endif %}
+                </p>
+                {% endfor %}
+            </article>
+           
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blog Archive. All rights reserved.</p>
+    </footer>
+</body>
+</html>
