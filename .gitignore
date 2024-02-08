@@ -1,0 +1,18 @@
+# Environment folders
+./*/myenv/
+./*/env/
+ 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secret keys and environment variables
+*/.env
+
+
+# IDE/Editor specific files
+.idea/
+.vscode/
+*.swp
+*.swo
